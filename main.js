@@ -33,6 +33,9 @@ for (let i=0; i<product.length; i++){
   let gridButton = document.createElement('button');
   gridButton.setAttribute('class','add-button');
   gridButton.innerHTML = 'Add to Cart';
+  gridButton.addEventListener('click', function() {
+    addButtonClicked(i);
+  });
 
   gridItem.appendChild(image);
   gridItem.appendChild(gridTitle);
@@ -41,22 +44,39 @@ for (let i=0; i<product.length; i++){
   gridContainer.appendChild(gridItem);
 }
 
-// function addItemToCart(product) {
+function addButtonClicked(product_idex) {
+  var itemAdded = product_idex;
+  addItemToCart(itemAdded);
+}
 
-// }
-// document.addEventListener('click', function(e) {
-//   if (addItemToCart(e.tartet, )
-// }
+function addItemToCart (itemAdded) {
+  console.log(itemAdded);
+}
+
+// Cart Table and Header
+
+var cols = ['Product','Price'];
+
+var t = document.createElement('table');
+t.classList.add('cart-header', 'cart-column');
+
+t.appendChild(document.createElement('thead'));
+t.querySelector('thead').appendChild(document.createElement('tr'));
+
+for (var i=0; i<cols.length; i++) {
+  var heading = document.createElement('td');
+  heading.textContent = cols[i];
+  t.querySelector('thead tr').appendChild(heading);
+}
+
+document.getElementById('wrapper').appendChild(t);
+
+
+// Purchase button
 
 document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked);
 
 function purchaseClicked() {
   alert('Thank you for your purchase');
 }
-
-// document.getElementById('item').innerHTML = product[0].productName;
-
-
-
-
 

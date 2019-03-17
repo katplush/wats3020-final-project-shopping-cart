@@ -123,17 +123,23 @@
   font-size: 1.5em;
 }
 
+table thead tr td {
+  padding-right: 40px;
+} 
+
 .cart-header {
   font-weight: bold;
   font-size: 1.25em;
   color: black;
-}
+  margin-right: 2em;
+  padding: 10px;
+} 
 
 .cart-column {
   display: flex;
   align-items: center;
   border-bottom: 1px solid black;
-  margin-right: 1.5em;
+  margin: 1em;
   padding-bottom: 10px;
   margin-top: 10px;
 }
@@ -209,30 +215,6 @@
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
-/* Modal Content */
-.modal-content {
-  background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-}
-
-/* The Close Button */
-.close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-
 .main-footer {
   background-color: black;
   color: white;
@@ -258,10 +240,17 @@
   height: 30px;
 }
 
-.footer-credits a {
+.footer-credits {
   color: white; 
-  font-size: 1em; 
+  font-size: 10px; 
+  margin-left: 2em;
 }
+
+.footer-credits a {
+  color: white;
+}
+
+
 
 
 
