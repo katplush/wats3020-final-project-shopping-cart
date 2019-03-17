@@ -11,58 +11,40 @@
   </head>
 
   <body>
-    <header>
-      <nav>
-        <li><a href="index.html">HOME</a></li>
-        <li><a href="">Cart</a></li>
+    <header class="main-header">
+      <nav class="main-nav nav">
+        <ul>
+          <li><a href="index.html">Shop</a></li>
+          <li><a href="index.html">About Us</a></li>
+          <li><a href="">Cart</a></li>
+        </ul>
       </nav>
-      <h1>Sync Pet Supply</h1>
+      <h1 class="business-name">Sync Pet Supply</h1>
     </header>
     <section>
-      <h2>Healthy Treats</h2>
-      <div>
-        <span id='item'></span>
-        <img src="Images/Liver.jpg">
-        <div>
-          <span>$10.99</span>
-          <button type="button">ADD TO CART</button>
-        </div>
+      <h2 class="section-header">Healthy Treats</h2>
+      <div class="grid-container">
+      <!--contains product images, name,price and "add to cart button-->
       </div>
+    <section class="container content-section">
+      <h2 class="section-header">CART</h2>
       <div>
-        <span>Chicken Treats</span>
-        <img src="Images/chicken.jpg">
-        <div>
-          <span>$9.99</span>
-          <button type="button">ADD TO CART</button>
-        </div>
+        <span class="cart-product cart-header cart-column">Product</span>
+        <span class="cart-price cart-header cart-column">PRICE</span>
+        <span class="cart-quantity cart-header cart-column">QUANTITY</span>
       </div>
-      <div>
-        <span>Beef Treats</span>
-        <img src="Images/beef.jpg">
-        <div>
-          <span>$11.99</span>
-          <button type="button">ADD TO CART</button>
-        </div>
+      <div class="cart-items">
       </div>
+      <div class="cart-total">
+        <strong class="cart-total-title">TOTAL</strong>
+        <span class="cart-total-price">$0</span>
+      </div>
+      <button class="btn add-button btn-purchase" type="button">PURCHASE</button>
     </section>
-    <section>
-      <h2>CART</h2>
-      <div>
-        <span>ITEM</span>
-        <span>PRICE</span>
-        <span>QUANTITY</span>
-      </div>
-      <div></div>
-      <div>
-        <strong>TOTAL</strong>
-        <span>$0</span>
-      </div>
-      <button type="button">PURCHASE</button>
-    </section>
-    <footer>
-      <div> 
-        <h3>Sync Pet Supply</h3>
-        <ul>
+    <footer class="main-footer">
+      <div class="container main-footer-container"> 
+        <h3 class="business-name">Sync Pet Supply</h3>
+        <ul class="nav footer-nav">
           <li>
             <a href="https://www.facebook.com/katplush" target="_blank">
               <img src="Images/facebook.png">
@@ -80,7 +62,7 @@
           </li>
         </ul>
       </div>
-      <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 		    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 		    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+      <div class="footer-credits">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 		    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 		    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
     </footer>
     <script src="main.js" async defer></script>
   </body>
