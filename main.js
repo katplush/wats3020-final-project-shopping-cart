@@ -44,32 +44,81 @@ for (let i=0; i<product.length; i++){
   gridContainer.appendChild(gridItem);
 }
 
-function addButtonClicked(product_idex) {
-  var itemAdded = product_idex;
+function addButtonClicked(product_index) {
+  var itemAdded = product_index;
   addItemToCart(itemAdded);
 }
 
 function addItemToCart (itemAdded) {
   console.log(itemAdded);
+  // let itemInCart = itemAdded;
+  // let itemImage = itemInCart.productImage;
+  // let itemName = itemInCart.productName;
+  // let itemPrice = itemInCart.productPrice;
+
+  let tr = document.createElement('tr');
+
+  let tdImage = document.createElement('td');
+  let tdName = document.createElement('td');
+  let tdPrice = document.createElement('td');
+
+  // tdImage.appendChild(itemImage);
+  // tdName.appendChild(itemName);
+  // tdPrice.appendChild(itemPrice);
+  tr.appendChild(tdImage);
+  tr.appendChild(tdName);
+  tr.appendChild(tdPrice);
+
+  table.appendChild(tr);
+
+  // appendToTable(itemImage, itemName, itemPrice);
 }
 
 // Cart Table and Header
 
-var cols = ['Product','Price'];
+let cols = ['Product','Price'];
 
-var t = document.createElement('table');
-t.classList.add('cart-header', 'cart-column');
+let table = document.createElement('table');
+table.id = 'cart_table';
+table.classList.add('cart-header', 'cart-column');
 
-t.appendChild(document.createElement('thead'));
-t.querySelector('thead').appendChild(document.createElement('tr'));
+table.appendChild(document.createElement('thead'));
+table.querySelector('thead').appendChild(document.createElement('tr'));
 
 for (var i=0; i<cols.length; i++) {
-  var heading = document.createElement('td');
+  let heading = document.createElement('td');
   heading.textContent = cols[i];
-  t.querySelector('thead tr').appendChild(heading);
+  table.querySelector('thead tr').appendChild(heading);
 }
 
-document.getElementById('wrapper').appendChild(t);
+document.getElementById('wrapper').appendChild(table);
+
+// function appendToTable(itemImage, itemName, itemPrice) {
+// let cartRow = document.createElement('div');
+// cartRow.classList.add('cart-row');
+
+
+
+
+
+//get item from product array using itemAdded as index
+
+//create a new row
+
+//create 2 tds for the row reprpesenting the product name and price
+
+//append tds to row
+
+//append row to table
+
+//keep a global total amount and increment here
+
+//update the total amount inner html
+
+// using const and let instead of var. You could move all your functions up to the top.    You could use document.querySelector and document.querySelector all to select single items and multiple items instead of getElementsById and getElementsByClassname.
+
+
+
 
 
 // Purchase button
