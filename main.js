@@ -51,53 +51,49 @@ function addButtonClicked(product_index) {
 
 function addItemToCart (itemAdded) {
   console.log(itemAdded);
-  // let itemInCart = itemAdded;
-  // let itemImage = itemInCart.productImage;
-  // let itemName = itemInCart.productName;
-  // let itemPrice = itemInCart.productPrice;
 
-  let tr = document.createElement('tr');
+  let row_id  = 'item_' + itemAdded;
 
-  let tdImage = document.createElement('td');
-  let tdName = document.createElement('td');
-  let tdPrice = document.createElement('td');
+  if (document.getElementById(row_id) === null){
+    let tr = document.createElement('tr');
 
-  // tdImage.appendChild(itemImage);
-  // tdName.appendChild(itemName);
-  // tdPrice.appendChild(itemPrice);
-  tr.appendChild(tdImage);
-  tr.appendChild(tdName);
-  tr.appendChild(tdPrice);
+    let tdImage = document.createElement('td');
+    let tdName = document.createElement('td');
+    let tdPrice = document.createElement('td');
+    let cartItems = document.getElementsByClassName('cart-items');
 
-  table.appendChild(tr);
+    tr.appendChild(tdImage);
+    tr.appendChild(tdName);
+    tr.appendChild(tdPrice);
 
-  // appendToTable(itemImage, itemName, itemPrice);
+    cartItems.appendChild(tr);
+  }
 }
+
+
+
+// tdImage.appendChild(itemImage);
+// tdName.appendChild(itemName);
+// tdPrice.appendChild(itemPrice);
+
+// appendToTable(itemImage, itemName, itemPrice);
+
 
 // Cart Table and Header
 
-let cols = ['Product','Price'];
+// document.getElementById('wrapper').appendChild(table);
 
-let table = document.createElement('table');
-table.id = 'cart_table';
-table.classList.add('cart-header', 'cart-column');
+// Purchase button
 
-table.appendChild(document.createElement('thead'));
-table.querySelector('thead').appendChild(document.createElement('tr'));
+document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked);
 
-for (var i=0; i<cols.length; i++) {
-  let heading = document.createElement('td');
-  heading.textContent = cols[i];
-  table.querySelector('thead tr').appendChild(heading);
+function purchaseClicked() {
+  alert('Thank you for your purchase');
 }
-
-document.getElementById('wrapper').appendChild(table);
 
 // function appendToTable(itemImage, itemName, itemPrice) {
 // let cartRow = document.createElement('div');
 // cartRow.classList.add('cart-row');
-
-
 
 
 
@@ -119,13 +115,17 @@ document.getElementById('wrapper').appendChild(table);
 
 
 
+// let cols = ['Product','Price'];
 
+// let table = document.createElement('table');
+// table.id = 'cart_table';
+// table.classList.add('cart-header', 'cart-column');
 
-// Purchase button
+// table.appendChild(document.createElement('thead'));
+// table.querySelector('thead').appendChild(document.createElement('tr'));
 
-document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked);
-
-function purchaseClicked() {
-  alert('Thank you for your purchase');
-}
-
+// for (var i=0; i<cols.length; i++) {
+//   let heading = document.createElement('td');
+//   heading.textContent = cols[i];
+//   table.querySelector('thead tr').appendChild(heading);
+// }
