@@ -54,34 +54,41 @@ function addItemToCart (itemAdded) {
 
   let row_id  = 'item_' + itemAdded;
 
+  // If the user hasn't added this item before, create a row and add it
+  // into the shopping cart table.
   if (document.getElementById(row_id) === null){
+    // Create new row and give it an id so we can find it later on.
     let tr = document.createElement('tr');
+    tr.id = row_id;
 
-    let tdImage = document.createElement('td');
+    let img = document.createElement('img');
+    let itemImage = product[itemAdded].productImage;
+    img.src = itemImage;
+    tr.appendChild(img);
+
     let tdName = document.createElement('td');
-    let tdPrice = document.createElement('td');
-    let cartItems = document.getElementsByClassName('cart-items');
-
-    tr.appendChild(tdImage);
+    let itemName = product[itemAdded].productName;
+    tdName.innerHTML = itemName;
     tr.appendChild(tdName);
-    tr.appendChild(tdPrice);
 
+    let tdPrice = document.createElement('td');
+    let itemPrice = product[itemAdded].productPrice;
+    tdPrice.innerHTML = itemPrice;
+    tr.appendChild(tdPrice);  
+
+    let cartItems = document.getElementById('cart-table');
     cartItems.appendChild(tr);
   }
 }
 
-
-
-// tdImage.appendChild(itemImage);
-// tdName.appendChild(itemName);
-// tdPrice.appendChild(itemPrice);
-
-// appendToTable(itemImage, itemName, itemPrice);
-
-
-// Cart Table and Header
-
-// document.getElementById('wrapper').appendChild(table);
+// function updateCartTotal(){
+//   let cartTotal = document.getElementsByClassName('cart-total');
+//   let cartRows = product[itemAdded].productPrice;
+//   let total = 0;
+//   for (var i = 0; i < cartRows.length; i++) {
+//     cart
+//   }
+// }
 
 // Purchase button
 
@@ -90,42 +97,3 @@ document.getElementsByClassName('btn-purchase')[0].addEventListener('click', pur
 function purchaseClicked() {
   alert('Thank you for your purchase');
 }
-
-// function appendToTable(itemImage, itemName, itemPrice) {
-// let cartRow = document.createElement('div');
-// cartRow.classList.add('cart-row');
-
-
-
-//get item from product array using itemAdded as index
-
-//create a new row
-
-//create 2 tds for the row reprpesenting the product name and price
-
-//append tds to row
-
-//append row to table
-
-//keep a global total amount and increment here
-
-//update the total amount inner html
-
-// using const and let instead of var. You could move all your functions up to the top.    You could use document.querySelector and document.querySelector all to select single items and multiple items instead of getElementsById and getElementsByClassname.
-
-
-
-// let cols = ['Product','Price'];
-
-// let table = document.createElement('table');
-// table.id = 'cart_table';
-// table.classList.add('cart-header', 'cart-column');
-
-// table.appendChild(document.createElement('thead'));
-// table.querySelector('thead').appendChild(document.createElement('tr'));
-
-// for (var i=0; i<cols.length; i++) {
-//   let heading = document.createElement('td');
-//   heading.textContent = cols[i];
-//   table.querySelector('thead tr').appendChild(heading);
-// }
